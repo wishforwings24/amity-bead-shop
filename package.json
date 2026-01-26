@@ -1,0 +1,11 @@
+{
+  "name": "amity-bead-shop",
+  "version": "1.0.0",
+  "description": "Amity Bead Shop - A simple static shopfront",
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

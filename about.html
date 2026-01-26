@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Amity Bead Shop</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="index.html">AMITY.</a></div>
+                <ul class="nav-links">
+                    <li><a href="index.html#shop">Shop</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" id="cart-toggle">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Drawer (Reused) -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart" class="close-btn">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button id="checkout-btn" class="btn btn-block">Checkout</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <main class="container">
+        <section class="hero" style="height: 40vh; margin-bottom: var(--spacing-lg);">
+            <div class="hero-content" style="max-width: 800px;">
+                <h1>Our Story</h1>
+                <p>Hand-threading joy, one bead at a time.</p>
+            </div>
+        </section>
+
+        <section style="max-width: 800px; margin: 0 auto; margin-bottom: var(--spacing-xl);">
+            <h2 class="section-title" style="text-align: left; font-size: 2rem;">The Amity Philosophy</h2>
+            <p style="margin-bottom: var(--spacing-md);">
+                Welcome to Amity Bead Shop. What started as a small passion project on a rainy Sunday afternoon has blossomed into a colorful celebration of creativity and connection.
+            </p>
+            <p style="margin-bottom: var(--spacing-md);">
+                We believe that jewelry shouldn't just be an accessory—it should be a mood lifter, a memory keeper, and a small spark of joy in your daily routine. Each of our bracelets is handcrafted with intention, using carefully selected gemstones and beads that speak to the soul.
+            </p>
+            <p>
+                From our "Grape Green" summer vibes to the calming "Pearl" collection, every piece basically has a little bit of our heart woven into it. We hope you find something here that makes you smile.
+            </p>
+        </section>
+
+        <section style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--spacing-lg); margin-bottom: var(--spacing-xl); text-align: center;">
+            <div style="background: var(--white); padding: var(--spacing-lg); border: 1px solid var(--border-light);">
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: var(--spacing-sm);">Handmade</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Crafted with care in our local studio.</p>
+            </div>
+            <div style="background: var(--white); padding: var(--spacing-lg); border: 1px solid var(--border-light);">
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: var(--spacing-sm);">Unique</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">No two beads are exactly alike.</p>
+            </div>
+            <div style="background: var(--white); padding: var(--spacing-lg); border: 1px solid var(--border-light);">
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: var(--spacing-sm);">Quality</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Durable elastic and premium stones.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <h3>AMITY.</h3>
+            <p>&copy; 2026 Amity Bead Shop. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Pinterest</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

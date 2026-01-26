@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Amity Bead Shop - Handcrafted beaded jewelry and accessories."
+    />
+    <title>Amity Bead Shop | Handcrafted Jewelry</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">AMITY.</div>
+          <ul class="nav-links">
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" id="cart-toggle">Cart (<span id="cart-count">0</span>)</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button id="close-cart" class="close-btn">&times;</button>
+      </div>
+      <div id="cart-items" class="cart-items">
+        <!-- Items will be injected here -->
+        <p class="empty-cart-msg">Your cart is empty.</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cart-total-price">$0.00</span>
+        </div>
+        <button id="checkout-btn" class="btn btn-block">Checkout</button>
+      </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <main>
+      <section class="hero">
+        <img
+          src="assets/images/hero.png"
+          alt="Amity Bead Shop Collection"
+          class="hero-bg"
+        />
+        <div class="hero-content">
+          <h1>Handmade with Love</h1>
+          <p>
+            Have a good time shopping!
+          </p>
+          <a href="#shop" class="btn">View Collection</a>
+        </div>
+      </section>
+
+      <section id="shop" class="container">
+        <h2 class="section-title">New Arrivals</h2>
+        <div id="product-grid" class="product-grid">
+          <!-- Products will be loaded dynamically via script.js -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <h3>AMITY.</h3>
+        <p>&copy; 2026 Amity Bead Shop. All rights reserved.</p>
+        <div class="social-links">
+          <!-- Social placeholders -->
+          <a href="#">Instagram</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
