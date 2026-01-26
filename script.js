@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Product Rendering ---
     const productGrid = document.getElementById('product-grid');
     const totalProducts = 21; 
-    const productPrice = 5.00; // Store as number for calc
+    const productPrice = 8.00; // Store as number for calc
 
     const productNames = {
         1: "Pearl",
