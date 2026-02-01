@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed | Amity Bead Shop</title>
+    
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+    <header>
+        <div class="container">
+            <nav>
+              <div class="logo">
+                <a href="index.html"><img src="assets/images/logo.jpg" alt="Amity Bead Shop" style="height: 80px;"></a>
+              </div>
+              <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+              </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 4rem 0;">
+        <div class="modal-content" style="display: block; max-width: 600px; padding: 3rem; text-align: center;">
+            <div style="font-size: 5rem; color: #10B981; margin-bottom: 1.5rem;">✓</div>
+            <h1 class="section-title" style="transform: none; left: 0; display: block; margin-bottom: 2rem;">Thank You!</h1>
+            <p style="font-size: 1.25rem; color: var(--text-main); margin-bottom: 1rem;">Your order has been placed successfully.</p>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Order Number: <strong id="order-id">#AMITY-12345</strong></p>
+            
+            <div style="background: var(--bg-color); padding: 1.5rem; border-radius: 15px; text-align: left; margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem;">What happens next?</h3>
+                <ol style="padding-left: 1.5rem; color: var(--text-muted);">
+                    <li style="margin-bottom: 0.5rem;">You will receive an email confirmation shortly.</li>
+                    <li style="margin-bottom: 0.5rem;">Our artisans will begin hand-threading your bracelets.</li>
+                    <li>We'll notify you once your order has been shipped!</li>
+                </ol>
+            </div>
+
+            <a href="index.html" class="btn" style="border-radius: 30px;">Continue Shopping</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <h3>AMITY.</h3>
+            <p>&copy; 2026 Amity Bead Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderId = localStorage.getItem('lastOrderId');
+            if (orderId) {
+                document.getElementById('order-id').textContent = `#${orderId}`;
+            }
+        });
+    </script>
+</body>
+</html>

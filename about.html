@@ -19,15 +19,25 @@
     <header>
         <div class="container">
             <nav>
-            <div class="logo">
+              <div class="logo">
                 <a href="index.html"><img src="assets/images/logo.jpg" alt="Amity Bead Shop" style="height: 80px;"></a>
-            </div>
-            <ul class="nav-links">
-                    <li><a href="index.html#shop">Shop</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#" id="cart-toggle">Cart (<span id="cart-count">0</span>)</a></li>
+              </div>
+              <div class="nav-container">
+                <ul class="nav-links">
+                  <li><a href="index.html#shop">Shop</a></li>
+                  <li><a href="about.html" class="active">About</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="#" id="cart-toggle-mobile" class="mobile-only">Cart (<span class="cart-count-val">0</span>)</a></li>
                 </ul>
+              </div>
+              <div class="nav-actions">
+                <a href="#" id="cart-toggle" class="desktop-only">Cart (<span id="cart-count">0</span>)</a>
+                <button class="hamburger" id="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
             </nav>
         </div>
     </header>
@@ -72,16 +82,29 @@
             </p>
         </section>
 
+        <section style="margin-bottom: var(--spacing-xl); background: var(--white); padding: var(--spacing-xl); border-radius: 20px; border: 1px solid var(--border-light);">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: center;">
+                <div>
+                    <h2 class="section-title" style="text-align: left; font-size: 2rem; transform: none; left: 0;">Our Process</h2>
+                    <p style="margin-bottom: var(--spacing-md);">Every Amity bracelet begins with a sketch and a curated selection of beads. We source our materials from ethical suppliers, focusing on glass, natural stone, and durable elastic.</p>
+                    <p>Our process is slow and intentional. Each bead is hand-threaded, and every knot is double-secured to ensure your jewelry lasts through all of life's adventures. We test every design for comfort and durability before it ever reaches the shop.</p>
+                </div>
+                <div style="background: var(--bg-color); height: 300px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic;">
+                    [Image: Detailed close-up of bead threading process]
+                </div>
+            </div>
+        </section>
+
         <section style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--spacing-lg); margin-bottom: var(--spacing-xl); text-align: center;">
-            <div style="background: var(--white); padding: var(--spacing-lg); border: 1px solid var(--border-light);">
+            <div class="testimonial-card">
                 <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: var(--spacing-sm);">Handmade</h3>
                 <p style="font-size: 0.9rem; color: var(--text-muted);">Crafted with care in our local studio.</p>
             </div>
-            <div style="background: var(--white); padding: var(--spacing-lg); border: 1px solid var(--border-light);">
+            <div class="testimonial-card">
                 <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: var(--spacing-sm);">Unique</h3>
                 <p style="font-size: 0.9rem; color: var(--text-muted);">No two beads are exactly alike.</p>
             </div>
-            <div style="background: var(--white); padding: var(--spacing-lg); border: 1px solid var(--border-light);">
+            <div class="testimonial-card">
                 <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: var(--spacing-sm);">Quality</h3>
                 <p style="font-size: 0.9rem; color: var(--text-muted);">Durable elastic and premium stones.</p>
             </div>
@@ -89,14 +112,53 @@
     </main>
 
     <footer>
-        <div class="container footer-content">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
             <h3>AMITY.</h3>
-            <p>&copy; 2026 Amity Bead Shop. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#">Instagram</a>
-                <a href="#">Pinterest</a>
+            <p style="opacity: 0.7; margin-top: 15px;">Handcrafted beaded jewelry designed to bring a little bit of joy to your everyday life.</p>
+            <div class="trust-badges">
+              <div class="trust-badge"><i class="fas fa-lock"></i> Secure SSL</div>
+              <div class="trust-badge"><i class="fab fa-paypal"></i> PayPal Verified</div>
             </div>
+          </div>
+          <div class="footer-section">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="index.html#shop">New Arrivals</a></li>
+              <li><a href="index.html#shop">Best Sellers</a></li>
+              <li><a href="index.html#shop">Limited Edition</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-section" style="grid-column: span 2;">
+            <h4>Join the Family</h4>
+            <p style="opacity: 0.7; margin-bottom: 15px; font-size: 0.9rem;">Sign up for early access to new collections and 10% off your first order!</p>
+            <form id="newsletter-form" style="display: flex; gap: 10px;">
+              <input type="email" placeholder="Your email address" required style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 30px; padding: 12px 20px; flex: 1;">
+              <button type="submit" class="btn" style="border-radius: 30px; padding: 12px 25px; background: var(--white); color: var(--text-main);">Join</button>
+            </form>
+            <div class="social-links" style="justify-content: flex-start; margin-top: 20px;">
+              <a href="https://instagram.com/amitybeadshop"><i class="fab fa-instagram"></i> Instagram</a>
+              <a href="https://pinterest.com/amitybeadshop"><i class="fab fa-pinterest"></i> Pinterest</a>
+            </div>
+          </div>
         </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+          <p class="small-text">&copy; 2026 Amity Bead Shop. Handcrafted with love.</p>
+          <div style="display: flex; gap: 20px;">
+            <a href="privacy.html" class="small-text">Privacy Policy</a>
+            <a href="terms.html" class="small-text">Terms of Service</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>

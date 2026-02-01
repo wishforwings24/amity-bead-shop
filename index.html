@@ -29,12 +29,22 @@
           <div class="logo">
             <a href="index.html"><img src="assets/images/logo.jpg" alt="Amity Bead Shop" style="height: 80px;"></a>
           </div>
-          <ul class="nav-links">
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#" id="cart-toggle">Cart (<span id="cart-count">0</span>)</a></li>
-          </ul>
+          <div class="nav-container">
+            <ul class="nav-links">
+              <li><a href="index.html#shop">Shop</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#" id="cart-toggle-mobile" class="mobile-only">Cart (<span class="cart-count-val">0</span>)</a></li>
+            </ul>
+          </div>
+          <div class="nav-actions">
+            <a href="#" id="cart-toggle" class="desktop-only">Cart (<span id="cart-count">0</span>)</a>
+            <button class="hamburger" id="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </nav>
       </div>
     </header>
@@ -75,8 +85,33 @@
         </div>
       </section>
 
-      <section id="shop" class="container">
-        <h2 class="section-title">New Arrivals</h2>
+      <section class="testimonials container" style="margin-bottom: var(--spacing-xl);">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"The most beautiful bracelets I've ever owned! The quality of the glass beads is stunning, and I love the 'Avo' colors."</p>
+            <div class="testimonial-author">- Sarah M. <span class="badge-verified">Verified Purchase</span></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"Fast shipping and the packaging was so cute. You can really tell these are handmade with love. Will definitely be ordering more!"</p>
+            <div class="testimonial-author">- Chloe R. <span class="badge-verified">Verified Purchase</span></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"I bought the 'Classic Pearl' for my wedding and it was perfect. Beautifully crafted and very durable."</p>
+            <div class="testimonial-author">- Emma L. <span class="badge-verified">Verified Purchase</span></div>
+          <div class="footer-section" style="grid-column: span 2;">
+            <h4>Join the Family</h4>
+            <p style="opacity: 0.7; margin-bottom: 15px; font-size: 0.9rem;">Sign up for early access to new collections and 10% off your first order!</p>
+            <form id="newsletter-form" style="display: flex; gap: 10px;">
+              <input type="email" placeholder="Your email address" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: white; border-radius: 30px; padding: 12px 20px;">
+              <button type="submit" class="btn" style="border-radius: 30px; padding: 12px 25px; background: var(--white); color: var(--text-main);">Join</button>
+            </form>
+          </div>
+        </div>
+      </section>
         <div id="product-grid" class="product-grid">
           <!-- Products will be loaded dynamically via script.js -->
         </div>
@@ -84,16 +119,72 @@
     </main>
 
     <footer>
-      <div class="container footer-content">
-        <h3>AMITY.</h3>
-        <p>&copy; 2026 Amity Bead Shop. All rights reserved.</p>
-        <div class="social-links">
-          <!-- Social placeholders -->
-          <a href="#">Instagram</a>
-          <a href="#">Pinterest</a>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3>AMITY.</h3>
+            <p style="opacity: 0.7; margin-top: 15px;">Handcrafted beaded jewelry designed to bring a little bit of joy to your everyday life.</p>
+            <div class="trust-badges">
+              <div class="trust-badge"><i class="fas fa-lock"></i> Secure SSL</div>
+              <div class="trust-badge"><i class="fab fa-paypal"></i> PayPal Verified</div>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="index.html#shop">New Arrivals</a></li>
+              <li><a href="index.html#shop">Best Sellers</a></li>
+              <li><a href="index.html#shop">Limited Edition</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-section" style="grid-column: span 2;">
+            <h4>Join the Family</h4>
+            <p style="opacity: 0.7; margin-bottom: 15px; font-size: 0.9rem;">Sign up for early access to new collections and 10% off your first order!</p>
+            <form id="newsletter-form" style="display: flex; gap: 10px;">
+              <input type="email" placeholder="Your email address" required style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 30px; padding: 12px 20px; flex: 1;">
+              <button type="submit" class="btn" style="border-radius: 30px; padding: 12px 25px; background: var(--white); color: var(--text-main);">Join</button>
+            </form>
+            <div class="social-links" style="justify-content: flex-start; margin-top: 20px;">
+              <a href="https://instagram.com/amitybeadshop"><i class="fab fa-instagram"></i> Instagram</a>
+              <a href="https://pinterest.com/amitybeadshop"><i class="fab fa-pinterest"></i> Pinterest</a>
+            </div>
+          </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+          <p class="small-text">&copy; 2026 Amity Bead Shop. Handcrafted with love.</p>
+          <div style="display: flex; gap: 20px;">
+            <a href="privacy.html" class="small-text">Privacy Policy</a>
+            <a href="terms.html" class="small-text">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
+
+    <div id="quick-view-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close" id="close-modal">&times;</button>
+        <img src="" alt="" id="modal-image" class="modal-image">
+        <div class="modal-details">
+          <span id="modal-category" class="modal-category"></span>
+          <h2 id="modal-title"></h2>
+          <div id="modal-price" class="modal-price"></div>
+          <p id="modal-description" class="modal-description"></p>
+          <div class="modal-meta">
+            <p><strong>Materials:</strong> Glass beads, elastic cord, stainless steel charm</p>
+            <p><strong>Care:</strong> Avoid contact with water and perfume.</p>
+          </div>
+          <button id="modal-add-to-cart" class="btn btn-block" style="margin-top: 20px;">Add to Cart</button>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

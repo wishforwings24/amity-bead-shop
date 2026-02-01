@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Amity Bead Shop</title>
+    <title>FAQ | Amity Bead Shop</title>
     
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon.png">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,7 +22,7 @@
                 <ul class="nav-links">
                   <li><a href="index.html#shop">Shop</a></li>
                   <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html" class="active">Contact</a></li>
+                  <li><a href="contact.html">Contact</a></li>
                   <li><a href="#" id="cart-toggle-mobile" class="mobile-only">Cart (<span class="cart-count-val">0</span>)</a></li>
                 </ul>
               </div>
@@ -42,59 +38,34 @@
         </div>
     </header>
 
-    <!-- Cart Drawer (Reused) -->
-    <div id="cart-drawer" class="cart-drawer">
-        <div class="cart-header">
-            <h2>Your Cart</h2>
-            <button id="close-cart" class="close-btn">&times;</button>
-        </div>
-        <div id="cart-items" class="cart-items">
-            <p class="empty-cart-msg">Your cart is empty.</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cart-total-price">$0.00</span>
+    <main class="container" style="padding: 4rem 0;">
+        <h1 class="section-title">Frequently Asked Questions</h1>
+        
+        <div style="max-width: 800px; margin: 40px auto;">
+            <div class="faq-item" style="margin-bottom: 30px; border-bottom: 1px solid var(--border-light); padding-bottom: 20px;">
+                <h3 style="margin-bottom: 15px;">How long will it take to receive my order?</h3>
+                <p style="color: var(--text-muted);">As all of our pieces are handmade to order, please allow 3-5 business days for processing. Once shipped, domestic orders typically arrive within 2-4 business days.</p>
             </div>
-            <button id="checkout-btn" class="btn btn-block">Checkout</button>
-        </div>
-    </div>
-    <div id="cart-overlay" class="cart-overlay"></div>
-
-    <main class="container">
-        <div class="checkout-layout"> <!-- Reusing checkout grid for contact layout -->
             
-            <div class="checkout-form-container">
-                <h1 class="section-title" style="text-align: left; margin-bottom: var(--spacing-lg);">Get in Touch</h1>
-                <p style="margin-bottom: var(--spacing-xl); color: var(--text-muted);">
-                    Have a question about a custom order or just want to say hi? We'd love to hear from you. Fill out the form below and we'll get back to you within 24 hours.
-                </p>
-
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="5" required style="width: 100%; padding: 12px; border: 1px solid var(--border-light); border-radius: 4px; font-family: var(--font-body); font-size: 1rem; border-color: var(--border-light);"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+            <div class="faq-item" style="margin-bottom: 30px; border-bottom: 1px solid var(--border-light); padding-bottom: 20px;">
+                <h3 style="margin-bottom: 15px;">What materials do you use?</h3>
+                <p style="color: var(--text-muted);">We use a variety of high-quality materials including faceted glass beads, natural gemstones, durable elastic cord, and stainless steel or 14k gold-filled hardware. Check individual product descriptions for specific material details.</p>
             </div>
 
-            <div class="order-summary" style="height: fit-content;"> <!-- Reusing order summary style for side info -->
-                <h2>Contact Info</h2>
-                <div style="margin-top: var(--spacing-md);">
-                    <p style="margin-bottom: var(--spacing-sm);"><strong>Email:</strong><br><a href="mailto:amitysbeadshop@outlook.com" style="color: var(--accent-color);">amitysbeadshop@outlook.com</a></p>
-                    
-                </div>
+            <div class="faq-item" style="margin-bottom: 30px; border-bottom: 1px solid var(--border-light); padding-bottom: 20px;">
+                <h3 style="margin-bottom: 15px;">How do I care for my jewelry?</h3>
+                <p style="color: var(--text-muted);">To keep your bracelets looking their best, we recommend rolling them onto your wrist rather than stretching. Avoid contact with water, perfumes, and lotions. Store in a cool, dry place when not in use.</p>
             </div>
 
+            <div class="faq-item" style="margin-bottom: 30px; border-bottom: 1px solid var(--border-light); padding-bottom: 20px;">
+                <h3 style="margin-bottom: 15px;">Do you offer custom designs?</h3>
+                <p style="color: var(--text-muted);">Yes! We love creating unique pieces. Please contact us via our contact form or DM us on Instagram to discuss your custom project.</p>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 30px; border-bottom: 1px solid var(--border-light); padding-bottom: 20px;">
+                <h3 style="margin-bottom: 15px;">What is your return policy?</h3>
+                <p style="color: var(--text-muted);">We want you to be completely happy with your purchase. If for any reason you're not satisfied, we accept returns on unworn items within 14 days of delivery. Please contact us to initiate a return.</p>
+            </div>
         </div>
     </main>
 
@@ -149,21 +120,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Simple mock submit for contact form
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            const originalText = btn.textContent;
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
-            setTimeout(() => {
-                alert('Message sent! We will get back to you soon.');
-                e.target.reset();
-                btn.textContent = originalText;
-                btn.disabled = false;
-            }, 1000);
-        });
-    </script>
 </body>
 </html>
