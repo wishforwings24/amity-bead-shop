@@ -3,97 +3,98 @@ console.log('Welcome to Amity Bead Shop');
 document.addEventListener('DOMContentLoaded', () => {
     // --- Product Rendering ---
     const productGrid = document.getElementById('product-grid');
-    const totalProducts = 87; 
-    const productPrice = 8.00; // Store as number for calc
+    const totalProducts = 88; 
+    const productPrice = 6.00; // Store as number for calc
 
                 const productNames = {
-        1: { name: "Aussie DIY Name", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Aussie DIY Name.jpg" },
-        2: { name: "Banana Berry", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Banana Berry.jpg" },
-        3: { name: "Blue Beige", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Blue Beige.jpg" },
-        4: { name: "Blueberry Banana", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Blueberry Banana.jpg" },
-        5: { name: "Bow-tiful Blue", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Bow-tiful Blue.jpg" },
-        6: { name: "Candy Shop", category: "pastel", desc: "A sugary mix of mint, lilac, and peach. Looks good enough to eat (but please don't!)", filename: "Candy Shop.jpg" },
-        7: { name: "Chicken Banana", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Chicken Banana.jpg" },
-        8: { name: "Cosmic Smiley", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Cosmic Smiley.jpg" },
-        9: { name: "Crackle Glass Mix", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Crackle Glass Mix.jpg" },
+        1: { name: "Aussie DIY Name", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Aussie DIY Name.jpg" },
+        2: { name: "Banana Berry", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Banana Berry.jpg" },
+        3: { name: "Blue Beige", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Blue Beige.jpg" },
+        4: { name: "Blueberry Banana", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Blueberry Banana.jpg" },
+        5: { name: "Bow-tiful Blue", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Bow-tiful Blue.jpg" },
+        6: { name: "Candy Shop", category: "vibrant", desc: "A sugary mix of mint, lilac, and peach. Looks good enough to eat (but please don't!)", filename: "Candy Shop.jpg" },
+        7: { name: "Chicken Banana", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Chicken Banana.jpg" },
+        8: { name: "Cosmic Smiley", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Cosmic Smiley.jpg" },
+        9: { name: "Crackle Glass Mix", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Crackle Glass Mix.jpg" },
         10: { name: "Crystal & Natural Wood", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Crystal & Natural Wood.jpg" },
-        11: { name: "EXTRA-terrestrial", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "EXTRA-terrestrial.jpg" },
-        12: { name: "Elpheba", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Elpheba.jpg" },
-        13: { name: "Fancy Bluey", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Fancy Bluey.jpg" },
-        14: { name: "Fire", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Fire.jpg" },
-        15: { name: "Flower Power", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Flower Power.jpg" },
-        16: { name: "Fluro Crush", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Fluro Crush.jpg" },
-        17: { name: "Gender Reveal", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Gender Reveal.jpg" },
-        18: { name: "Glow in the Dark", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Glow in the Dark.jpg" },
-        19: { name: "Gob-Stopper", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Gob-Stopper.jpg" },
-        20: { name: "Grape Green", category: "pastel", desc: "A burst of summer energy! These translucent green beads capture the essence of vineyard-fresh grapes.", filename: "Grape Green.jpg" },
-        21: { name: "Grape Purple", category: "pastel", desc: "Rich amethyst-coloured beads that add a royal touch to your jewellery collection.", filename: "Grape Purple.jpg" },
-        22: { name: "Green Love", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Green Love.jpg" },
-        23: { name: "Green Lovey-Dovey", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Green Lovey-Dovey.jpg" },
-        24: { name: "Green Pearl x2", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Green Pearl x2.jpg" },
-        25: { name: "Green Seed", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Green Seed.jpg" },
-        26: { name: "Grey Crazy Clay", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Grey Crazy Clay.jpg" },
-        27: { name: "I-Scream-Pink", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "I-Scream-Pink.jpg" },
-        28: { name: "ILY Heart", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "ILY Heart.jpg" },
-        29: { name: "La-Blue-Bu", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "La-Blue-Bu.jpg" },
-        30: { name: "La-Brown-Bu x2", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "La-Brown-Bu x2.jpg" },
+        11: { name: "EXTRA-terrestrial", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "EXTRA-terrestrial.jpg" },
+        12: { name: "Elpheba", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Elpheba.jpg" },
+        13: { name: "Fancy Bluey", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Fancy Bluey.jpg" },
+        14: { name: "Fire", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Fire.jpg" },
+        15: { name: "Flower Power", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Flower Power.jpg" },
+        16: { name: "Fluro Crush", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Fluro Crush.jpg" },
+        17: { name: "Gender Reveal", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Gender Reveal.jpg" },
+        18: { name: "Glow in the Dark", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Glow in the Dark.jpg" },
+        19: { name: "Gob-Stopper", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Gob-Stopper.jpg" },
+        20: { name: "Grape Green", category: "vibrant", desc: "A burst of summer energy! These translucent green beads capture the essence of vineyard-fresh grapes.", filename: "Grape Green.jpg" },
+        21: { name: "Grape Purple", category: "vibrant", desc: "Rich amethyst-coloured beads that add a royal touch to your jewellery collection.", filename: "Grape Purple.jpg" },
+        22: { name: "Green Love", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Green Love.jpg" },
+        23: { name: "Green Lovey-Dovey", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Green Lovey-Dovey.jpg" },
+        24: { name: "Green Pearl", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Green Pearl.jpg" },
+        25: { name: "Green Seed", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Green Seed.jpg" },
+        26: { name: "Grey Crazy Clay", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Grey Crazy Clay.jpg" },
+        27: { name: "I-Scream-Pink", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "I-Scream-Pink.jpg" },
+        28: { name: "ILY Heart", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "ILY Heart.jpg" },
+        29: { name: "La-Blue-Bu", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "La-Blue-Bu.jpg" },
+        30: { name: "La-Brown-Bu", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "La-Brown-Bu.jpg" },
         31: { name: "La-Pink-Bu Star", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "La-Pink-Bu Star.jpg" },
-        32: { name: "La-Yellow_Bu x2", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "La-Yellow_Bu x2.jpg" },
-        33: { name: "Large Peach", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Large Peach.jpg" },
-        34: { name: "Lavender", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lavender.jpg" },
-        35: { name: "Lovey-Dovey Peach", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lovey-Dovey Peach.jpg" },
-        36: { name: "Lovey-Dovey Pink Clay", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lovey-Dovey Pink Clay.jpg" },
-        37: { name: "Lovey-Dovey Pink Crystal", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lovey-Dovey Pink Crystal.jpg" },
-        38: { name: "Lovey-Dovey Purple Green", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lovey-Dovey Purple Green.jpg" },
-        39: { name: "Lovey-Dovey Purple", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lovey-Dovey Purple.jpg" },
-        40: { name: "Lucky Fish", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lucky Fish.jpg" },
+        32: { name: "La-Yellow_Bu", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "La-Yellow_Bu.jpg" },
+        33: { name: "Large Peach", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Large Peach.jpg" },
+        34: { name: "Lavender", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lavender.jpg" },
+        35: { name: "Lovey-Dovey Peach", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lovey-Dovey Peach.jpg" },
+        36: { name: "Lovey-Dovey Pink Clay", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lovey-Dovey Pink Clay.jpg" },
+        37: { name: "Lovey-Dovey Pink Crystal", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lovey-Dovey Pink Crystal.jpg" },
+        38: { name: "Lovey-Dovey Purple Green", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lovey-Dovey Purple Green.jpg" },
+        39: { name: "Lovey-Dovey Purple", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lovey-Dovey Purple.jpg" },
+        40: { name: "Lucky Fish", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Lucky Fish.jpg" },
         41: { name: "Marble Love", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Marble Love.jpg" },
-        42: { name: "Mountain Dew", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Mountain Dew.jpg" },
-        43: { name: "Multi Colour Mix", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Multi Colour Mix.jpg" },
-        44: { name: "Neon Crush", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Neon Crush.jpg" },
-        45: { name: "Neon Party (Choker Necklace)", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Neon Party (Choker Necklace).jpg" },
-        46: { name: "Obsidian Large", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Obsidian Large.jpg" },
-        47: { name: "Orange Bomb", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Orange Bomb.jpg" },
-        48: { name: "Orange Sorbet 1", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Orange Sorbet 1.jpg" },
-        49: { name: "Orange Sorbet 2", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Orange Sorbet 2.jpg" },
-        50: { name: "Outback", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Outback.jpg" },
-        51: { name: "Peach Crazy Clay", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Peach Crazy Clay.jpg" },
-        52: { name: "Peach Crazy Mix", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Peach Crazy Mix.jpg" },
-        53: { name: "Peach Dreams", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Peach Dreams.jpg" },
-        54: { name: "Peaches N Cream", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Peaches N Cream.jpg" },
-        55: { name: "Pearl LOVE", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Pearl LOVE.jpg" },
+        42: { name: "Mountain Dew", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Mountain Dew.jpg" },
+        43: { name: "Multi Colour Mix", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Multi Colour Mix.jpg" },
+        44: { name: "Neon Crush", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Neon Crush.jpg" },
+        45: { name: "Neon Party (Choker Necklace)", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Neon Party (Choker Necklace).jpg" },
+        46: { name: "Obsidian Large", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Obsidian Large.jpg" },
+        47: { name: "Orange Bomb", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Orange Bomb.jpg" },
+        48: { name: "Orange Sorbet 1", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Orange Sorbet 1.jpg" },
+        49: { name: "Orange Sorbet 2", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Orange Sorbet 2.jpg" },
+        50: { name: "Outback", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Outback.jpg" },
+        51: { name: "Peach Crazy Clay", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Peach Crazy Clay.jpg" },
+        52: { name: "Peach Crazy Mix", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Peach Crazy Mix.jpg" },
+        53: { name: "Peach Dreams", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Peach Dreams.jpg" },
+        54: { name: "Peaches N Cream", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Peaches N Cream.jpg" },
+        55: { name: "Pearl LOVE", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Pearl LOVE.jpg" },
         56: { name: "Petal", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Petal.jpg" },
-        57: { name: "Pink Crazy Clay", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Pink Crazy Clay.jpg" },
-        58: { name: "Pink See Through", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Pink See Through.jpg" },
-        59: { name: "Pink White Clay", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Pink White Clay.jpg" },
-        60: { name: "Pom Pom", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Pom Pom.jpg" },
-        61: { name: "Purple & Natural Wood", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Purple & Natural Wood.jpg" },
-        62: { name: "Rainbow Fish Scales", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Rainbow Fish Scales.jpg" },
-        63: { name: "Rainbow Mix", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Rainbow Mix.jpg" },
-        64: { name: "Red Deluxe Large", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Red Deluxe Large.jpg" },
-        65: { name: "Rockin' Strawberry", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Rockin' Strawberry.jpg" },
-        66: { name: "Royal", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Royal.jpg" },
-        67: { name: "See Through Fish", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "See Through Fish.jpg" },
-        68: { name: "See Through", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "See Through.jpg" },
-        69: { name: "Shiny Blue Mini", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Shiny Blue Mini.jpg" },
+        57: { name: "Pink Crazy Clay", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Pink Crazy Clay.jpg" },
+        58: { name: "Pink See Through", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Pink See Through.jpg" },
+        59: { name: "Pink White Clay", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Pink White Clay.jpg" },
+        60: { name: "Pom Pom", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Pom Pom.jpg" },
+        61: { name: "Purple & Natural Wood", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Purple & Natural Wood.jpg" },
+        62: { name: "Rainbow Fish Scales", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Rainbow Fish Scales.jpg" },
+        63: { name: "Rainbow Mix", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Rainbow Mix.jpg" },
+        64: { name: "Red Deluxe Large", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Red Deluxe Large.jpg" },
+        65: { name: "Rockin' Strawberry", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Rockin' Strawberry.jpg" },
+        66: { name: "Royal", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Royal.jpg" },
+        67: { name: "See Through Fish", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "See Through Fish.jpg" },
+        68: { name: "See Through", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "See Through.jpg" },
+        69: { name: "Shiny Blue Mini", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Shiny Blue Mini.jpg" },
         70: { name: "Smoke Show", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Smoke Show.jpg" },
-        71: { name: "Space Galaxy", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Space Galaxy.jpg" },
-        72: { name: "Sweet Cherry Pie", category: "pastel", desc: "Deep red 'cherry' beads paired with crust-coloured neutrals. Deliciously charming.", filename: "Sweet Cherry Pie.jpg" },
-        73: { name: "Teachers Pet", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Teachers Pet.jpg" },
-        74: { name: "Thin Green Mini", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Thin Green Mini.jpg" },
+        71: { name: "Space Galaxy", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Space Galaxy.jpg" },
+        72: { name: "Sweet Cherry Pie", category: "vibrant", desc: "Deep red 'cherry' beads paired with crust-coloured neutrals. Deliciously charming.", filename: "Sweet Cherry Pie.jpg" },
+        73: { name: "Teachers Pet", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Teachers Pet.jpg" },
+        74: { name: "Thin Green Mini", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Thin Green Mini.jpg" },
         75: { name: "Valentine Kisses", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Valentine Kisses.jpg" },
-        76: { name: "Valentine", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Valentine.jpg" },
-        77: { name: "Violet Crumble", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Violet Crumble.jpg" },
-        78: { name: "Vitamin C Large", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Vitamin C Large.jpg" },
-        79: { name: "Vitamin C Mini", category: "pastel", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Vitamin C Mini.jpg" },
-        80: { name: "Wicked", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Wicked.jpg" },
-        81: { name: "Zesty Pop", category: "pastel", desc: "Lime and lemon tones that practically sizzle with citrus energy.", filename: "Zesty Pop.jpg" },
+        76: { name: "Valentine", category: "classic", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Valentine.jpg" },
+        77: { name: "Violet Crumble", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Violet Crumble.jpg" },
+        78: { name: "Vitamin C Large", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Vitamin C Large.jpg" },
+        79: { name: "Vitamin C Mini", category: "vibrant", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Vitamin C Mini.jpg" },
+        80: { name: "Wicked", category: "limited", desc: "A beautiful handcrafted bead bracelet to add to your collection.", filename: "Wicked.jpg" },
+        81: { name: "Zesty Pop", category: "vibrant", desc: "Lime and lemon tones that practically sizzle with citrus energy.", filename: "Zesty Pop.jpg" },
         82: { name: "avo", category: "classic", desc: "Soft avocado tones paired with cream accents for a subtle, earthy look that goes with any outfit.", filename: "avo.jpg" },
-        83: { name: "bombom", category: "classic", desc: "Playful oversized beads in a variety of textures. Unique and bold.", filename: "bombom.jpg" },
+        83: { name: "Pom Pom", category: "classic", desc: "Playful oversized beads in a variety of textures. Unique and bold.", filename: "Pom Pom.jpg" },
         84: { name: "la-pink-bu", category: "classic", desc: "Part of our signature 'Bu' collection, featuring soft blush pinks and rose gold spacers.", filename: "la-pink-bu.jpg" },
-        85: { name: "neon-citrus", category: "classic", desc: "High-visibility orange and yellow for those who aren't afraid to stand out.", filename: "neon-citrus.jpg" },
-        86: { name: "oreo", category: "pastel", desc: "A classic black and white contrast that is as sweet and versatile as its namesake.", filename: "oreo.jpg" },
-        87: { name: "rocky-strawberry", category: "classic", desc: "Stone-textured red beads that look like fresh strawberries picked from a rocky field.", filename: "rocky-strawberry.jpg" }
+        85: { name: "neon-citrus", category: "vibrant", desc: "High-visibility orange and yellow for those who aren't afraid to stand out.", filename: "neon-citrus.jpg" },
+        86: { name: "oreo", category: "classic", desc: "A classic black and white contrast that is as sweet and versatile as its namesake.", filename: "oreo.jpg" },
+        87: { name: "rocky-strawberry", category: "classic", desc: "Stone-textured red beads that look like fresh strawberries picked from a rocky field.", filename: "rocky-strawberry.jpg" },
+        88: { name: "Pearl", category: "classic", desc: "Elegant and timeless, the Pearl bracelet features creamy white glass beads that mimic the luster of natural pearls.", filename: "Pearl.jpg" }
     };
 
 
@@ -415,8 +416,22 @@ document.addEventListener('DOMContentLoaded', () => {
             checkoutItemsContainer.appendChild(itemEl);
         });
 
-        if (subtotalEl) subtotalEl.textContent = '$' + subtotal.toFixed(2);
-        if (totalEl) totalEl.textContent = '$' + subtotal.toFixed(2);
+        const shippingCost = 2.00;
+        const finalTotal = subtotal + shippingCost;
+
+        if (subtotalEl) {
+            subtotalEl.innerHTML = `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span>Subtotal:</span>
+                    <span>$${subtotal.toFixed(2)}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; color: var(--text-muted);">
+                    <span>Shipping:</span>
+                    <span>$${shippingCost.toFixed(2)}</span>
+                </div>
+            `;
+        }
+        if (totalEl) totalEl.textContent = '$' + finalTotal.toFixed(2);
     }
 
     // Call checkout summary if container exists
@@ -467,7 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: total.toFixed(2)
+                            value: (total + 2.00).toFixed(2)
                         },
                         description: "Amity Bead Shop Order"
                     }]

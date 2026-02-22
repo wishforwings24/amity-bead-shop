@@ -490,6 +490,19 @@ nav {
   transform: scale(1.1);
 }
 
+/* Per-image position fixes for cut-off photos */
+.product-image[src*="neon-citrus"],
+.product-image[src*="Neon Citrus"],
+.product-image[src*="Neon%20Citrus"],
+.product-image[src*="la-pink-bu"],
+.product-image[src*="La-Pink-Bu"],
+.product-image[src*="La-Pink-Bu%20Star"],
+.product-image[src*="Pom Pom"],
+.product-image[src*="Pom%20Pom"],
+.product-image[src*="pom-pom"] {
+  object-position: center 30%;
+}
+
 .product-overlay {
   position: absolute;
   top: 0;
