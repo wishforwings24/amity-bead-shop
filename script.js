@@ -298,6 +298,59 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial Render
     renderCart();
 
+    // Checkout Navigation
+    const checkoutBtn = document.getElementById('checkout-btn');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', () => {
+            showToast("Checkout is disabled for this preview.");
+        });
+    }
+
+    // --- Checkout Page Logic ---
+    function renderCheckoutSummary() {
+        const checkoutItemsContainer = document.getElementById('checkout-items');
+        const subtotalEl = document.getElementById('checkout-subtotal');
+        const totalEl = document.getElementById('checkout-total');
+        
+        if (!checkoutItemsContainer) return; // Not on checkout page
+
+        checkoutItemsContainer.innerHTML = '';
+        let subtotal = 0;
+
+        if (cart.length === 0) {
+            checkoutItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            if (subtotalEl) subtotalEl.textContent = '$0.00';
+            if (totalEl) totalEl.textContent = '$0.00';
+            return;
+        }
+
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+
+            const itemEl = document.createElement('div');
+            itemEl.className = 'cart-item'; // Reuse styles
+            itemEl.style.marginBottom = '15px';
+            itemEl.innerHTML = `
+                <img src="assets/images/product-${item.id}.jpg" alt="${item.name}" style="width: 50px; height: 50px; border-radius: 8px;">
+                <div class="cart-item-details">
+                    <div class="cart-item-title" style="font-size: 0.9rem;">${item.name}</div>
+                    <div class="cart-item-price" style="font-size: 0.8rem;">$${item.price.toFixed(2)} x ${item.quantity}</div>
+                </div>
+                <div style="font-weight: 500;">$${itemTotal.toFixed(2)}</div>
+            `;
+            checkoutItemsContainer.appendChild(itemEl);
+        });
+
+        if (subtotalEl) subtotalEl.textContent = '$' + subtotal.toFixed(2);
+        if (totalEl) totalEl.textContent = '$' + subtotal.toFixed(2);
+    }
+
+    // Call checkout summary if container exists
+    if (document.getElementById('checkout-items')) {
+        renderCheckoutSummary();
+    }
+
     // --- Existing Utility ---
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

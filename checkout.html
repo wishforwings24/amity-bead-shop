@@ -15,8 +15,8 @@
     
     <link rel="stylesheet" href="style.css">
     
-    <!-- PayPal SDK -->
-    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script> <!-- 'sb' for sandbox testing -->
+    <!-- PayPal SDK: Explicitly disabling credit/debit card funding -->
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD&disable-funding=credit,card"></script> 
 </head>
 <body>
     <header>
@@ -72,8 +72,9 @@
                     </section>
 
                     <section class="form-section">
-                        <h2>Payment Method</h2>
-                        <div id="paypal-button-container" style="margin-top: 20px;"></div>
+                        <h2>Payment</h2>
+                        <p style="margin-bottom: 20px; color: var(--text-muted);">Please complete your purchase via PayPal's secure checkout.</p>
+                        <div id="paypal-button-container"></div>
                         <p class="small-text" style="text-align: center; margin-top: 15px;">
                             <i class="fas fa-lock"></i> All transactions are secure and encrypted.
                         </p>
