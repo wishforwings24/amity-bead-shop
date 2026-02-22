@@ -106,16 +106,30 @@ document.addEventListener('DOMContentLoaded', () => {
         filteredProducts.push({ id: i, ...p, price: productPrice });
     }
 
-    function renderProducts(products) {
+    const PAGE_SIZE = 20;
+    let currentPage = 1;
+    let currentResults = [];
+
+    function renderPage(products, page, append = false) {
         if (!productGrid) return;
-        productGrid.innerHTML = '';
-        
+
+        const start = (page - 1) * PAGE_SIZE;
+        const slice = products.slice(start, start + PAGE_SIZE);
+
+        if (!append) {
+            productGrid.innerHTML = '';
+        }
+
+        // Remove existing Load More button if any
+        const existingBtn = document.getElementById('load-more-btn');
+        if (existingBtn) existingBtn.remove();
+
         if (products.length === 0) {
             productGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;"><h3>No products found matching your search.</h3></div>';
             return;
         }
 
-        products.forEach(p => {
+        slice.forEach(p => {
             const article = document.createElement('article');
             article.className = 'product-card';
             const isNew = p.id <= 3;
@@ -139,6 +153,25 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             productGrid.appendChild(article);
         });
+
+        // Add Load More button if there are more products
+        if (start + PAGE_SIZE < products.length) {
+            const loadMoreWrapper = document.createElement('div');
+            loadMoreWrapper.style.cssText = 'grid-column: 1/-1; text-align: center; padding: 20px 0;';
+            loadMoreWrapper.innerHTML = `<button id="load-more-btn" class="btn" style="min-width: 200px;">Load More (${products.length - start - PAGE_SIZE} remaining)</button>`;
+            productGrid.appendChild(loadMoreWrapper);
+
+            document.getElementById('load-more-btn').addEventListener('click', () => {
+                currentPage++;
+                renderPage(currentResults, currentPage, true);
+            });
+        }
+    }
+
+    function renderProducts(products) {
+        currentResults = products;
+        currentPage = 1;
+        renderPage(products, 1, false);
     }
 
     // Initial Render
