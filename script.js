@@ -302,7 +302,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutBtn = document.getElementById('checkout-btn');
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
-            showToast("Checkout is disabled for this preview.");
+            if (cart.length === 0) {
+                showToast("Your cart is empty.");
+                return;
+            }
+            window.location.href = 'checkout.html';
         });
     }
 
