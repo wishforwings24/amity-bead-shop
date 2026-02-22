@@ -1,18 +1,18 @@
 :root {
-  /* Premium Pastel Color Palette */
-  --bg-color: #FFF5F8; /* Soft Pinkish White */
-  --text-main: #5D2E46; /* Deep Plum */
-  --text-muted: #8E5D73;
-  --accent-color: #FDA4AF; /* Softer Rose */
-  --accent-hover: #FB7185;
-  --accent-secondary: #C084FC; /* Softer Violet */
+  /* Premium Light Blue Color Palette */
+  --bg-color: #F8FAFC; /* Soft Blue-ish White */
+  --text-main: #0F1D30; /* Very Deep Navy Blue (near black) for max contrast */
+  --text-muted: #334155; /* Dark slate for muted text */
+  --accent-color: #C3E1FD; /* Logo Light Blue */
+  --accent-hover: #A0CFFB;
+  --accent-secondary: #8DBEFA; /* Slightly deeper blue */
   --white: #FFFFFF;
-  --border-light: #FAE8FF; /* Lighter borders */
+  --border-light: #CBD5E1; /* Darker borders for contrast where used */
   --success: #10B981;
   --error: #EF4444;
 
   /* Gradients */
-  --grad-hero: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+  --grad-hero: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%); /* Darkened hero overlay */
   --grad-accent: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
 
   /* Typography */
@@ -34,11 +34,11 @@
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #1A1216;
-    --text-main: #FBCFE8;
-    --text-muted: #FDA4AF;
-    --white: #2D1B24;
-    --border-light: #4A2B3D;
+    --bg-color: #0B1120; /* Darker background */
+    --text-main: #F8FAFC; /* Lighter text */
+    --text-muted: #CBD5E1; /* Lighter muted text */
+    --white: #1E293B;
+    --border-light: #475569;
   }
 }
 
@@ -100,7 +100,7 @@ header {
   padding: var(--spacing-md) 0;
   position: sticky;
   top: 0;
-  background-color: #FAF5FF; /* Solid Lavender-White for distinct separation */
+  background-color: var(--accent-color); /* Match logo main color */
   z-index: 100;
   border-bottom: 2px solid var(--border-light);
   box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* More defined shadow */
@@ -126,11 +126,11 @@ nav {
 
 .nav-links a {
   font-size: 0.95rem; /* Increased size for legibility */
-  color: #2D1B24; /* Deeper Plum for maximum contrast */
-  font-weight: 600;
+  color: #0F1D30; /* Force deep dark color for contrast on light blue header */
+  font-weight: 700; /* Thicker font weight */
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.02);
+  text-shadow: 0 1px 2px rgba(255,255,255,0.4); /* Light shadow to pop off blue */
   transition: all 0.3s ease;
 }
 
@@ -146,11 +146,12 @@ nav {
 
 #cart-toggle, 
 #cart-toggle-mobile { 
-  color: #2D1B24 !important; 
-  font-weight: 600; 
+  color: #0F1D30 !important; 
+  font-weight: 700; 
   text-transform: uppercase;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.4);
 }
 
 .hamburger {
@@ -225,7 +226,7 @@ nav {
 
 #cart-count {
   background: var(--accent-color);
-  color: var(--white);
+  color: var(--text-main); /* Better contrast against light blue */
   padding: 2px 8px;
   border-radius: 10px;
   font-size: 0.8rem;
@@ -333,35 +334,36 @@ nav {
 
 .hero h1 {
   font-size: clamp(2.5rem, 8vw, 5rem);
-  color: var(--white);
+  color: #FFFFFF; /* Pure white */
   margin-bottom: var(--spacing-md);
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  font-weight: 700;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), 0 2px 5px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+  font-weight: 800; /* Bolder */
   letter-spacing: -0.02em;
 }
 
 .hero p {
-  color: var(--white);
+  color: #FFFFFF; /* Pure white */
   margin-bottom: var(--spacing-lg);
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 300;
-  opacity: 0.9;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem); /* Slightly larger */
+  font-weight: 500; /* Thicker */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8); /* Added shadow */
+  opacity: 1; /* Fully opaque */
 }
 
 .hero .btn {
   background: var(--grad-accent);
-  color: var(--white);
+  color: #0F1D30; /* Ensure very dark text for high contrast */
   border: none;
   padding: 16px 40px;
-  font-weight: 600;
+  font-weight: 800; /* Maximize weight */
   border-radius: 50px;
-  box-shadow: 0 10px 20px rgba(217, 70, 239, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Darker shadow for button to pop off image */
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .hero .btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(217, 70, 239, 0.4);
+  box-shadow: 0 15px 30px rgba(195, 225, 253, 0.4); /* Match light blue shadow */
   background: var(--grad-accent);
   filter: brightness(1.1);
 }
@@ -575,7 +577,7 @@ nav {
 
 .add-to-cart-btn:hover {
   background: var(--accent-color);
-  color: var(--white);
+  color: var(--text-main); /* Match main text for visibility */
   border-color: var(--accent-color);
 }
 
