@@ -70,7 +70,7 @@
                     Have a question about a custom order or just want to say hi? We'd love to hear from you. Fill out the form below and we'll get back to you within 24 hours.
                 </p>
 
-                <form id="contact-form" name="contact" method="POST" data-netlify="true" action="/contact.html">
+                <form name="contact" method="POST" data-netlify="true" action="/thankyou.html">
                     <input type="hidden" name="form-name" value="contact">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -85,7 +85,6 @@
                         <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 12px; border: 1px solid var(--border-light); border-radius: 4px; font-family: var(--font-body); font-size: 1rem; border-color: var(--border-light);"></textarea>
                     </div>
                     <button type="submit" class="btn">Send Message</button>
-                    <p id="form-success" style="display:none; margin-top: 15px; color: #10B981; font-weight: 600;">✓ Message sent! We'll get back to you soon.</p>
                 </form>
             </div>
 
@@ -148,38 +147,7 @@
 
     <script src="script.js"></script>
     <script>
-        document.getElementById('contact-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const form = e.target;
-            const btn = form.querySelector('button[type="submit"]');
-            const successMsg = document.getElementById('form-success');
-            const originalText = btn.textContent;
-
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
-
-            const formData = new FormData(form);
-
-            try {
-                const response = await fetch('/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(formData).toString()
-                });
-
-                if (response.ok) {
-                    successMsg.style.display = 'block';
-                    form.reset();
-                } else {
-                    alert('Something went wrong. Please try again or email us directly.');
-                }
-            } catch (err) {
-                alert('Something went wrong. Please try again or email us directly.');
-            }
-
-            btn.textContent = originalText;
-            btn.disabled = false;
-        });
+        // No custom JS needed - native form POST handled by Netlify directly
     </script>
 </body>
 </html>
