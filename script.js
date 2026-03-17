@@ -515,6 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
+                            currency_code: 'AUD',
                             value: (total + 2.00).toFixed(2)
                         },
                         description: "Amity Bead Shop Order"
